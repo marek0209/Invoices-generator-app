@@ -1,5 +1,5 @@
-
-module.exports = ({ name, price1, price2, receiptId, itemName}) => {
+//module.exports = ({ name, priceFirst, priceSecond, receiptId, itemName, }) => {
+module.exports = ({ priceFirst, priceSecond, invoiceID, itemName, nazwa, wojewodztwo, powiat, gmina, miejscowosc, kodPocztowy, ulica}) => {
     const today = new Date();
 return `
     <!doctype html>
@@ -66,6 +66,11 @@ return `
              border-top: 2px solid #eee;
              font-weight: bold;
              }
+             .footer{
+             margin-bottom: 10px;
+             text-align: center;
+             bottom: 0;
+             }
              @media only screen and (max-width: 600px) {
              .invoice-box table tr.top table td {
              width: 100%;
@@ -90,7 +95,7 @@ return `
                             <td class="title"><img  src="http://www.odoo.com/apps/icon_image?module_id=22299"
                                style="width:100%; max-width:156px;"></td>
                             <td>
-                               Datum: ${`${today.getDate()}. ${today.getMonth() + 1}. ${today.getFullYear()}.`}
+                               Date ${`${today.getDate()}. ${today.getMonth() + 1}. ${today.getFullYear()}.`}
                             </td>
                          </tr>
                       </table>
@@ -101,10 +106,18 @@ return `
                       <table>
                          <tr>
                             <td>
-                               Customer name: ${name}
+                               Customer name: ${nazwa}
+                               <br>
+                               Wojewodztwo: ${wojewodztwo}
+                               <br>
+                               Powiat: ${powiat}
+                               <br>
+                                ${kodPocztowy}  ${miejscowosc},  gmina : ${gmina}
+                                <br>
+                               ${ulica}
                             </td>
                             <td>
-                               Receipt number: ${receiptId}
+                               Invoice ID: ${invoiceID}
                             </td>
                          </tr>
                       </table>
@@ -115,16 +128,20 @@ return `
                    <td>Price</td>
                 </tr>
                 <tr class="item">
-                   <td>${itemName}$</td>
-                   <td>${price1}$</td>
+                   <td>${itemName}</td>
+                   <td>${priceFirst}$</td>
                 </tr>
                 <tr class="item">
                    <td>Second item:</td>
-                   <td>${price2}$</td>
+                   <td>${priceSecond}</td>
                 </tr>
              </table>
              <br />
-             <h1 class="justify-center">Total price: ${parseInt(price1) + parseInt(price2)}$</h1>
+             <h1 class="justify-center">Total price: ${parseInt(priceFirst) + parseInt(priceSecond)}$</h1>
+          </div>
+          <div class="footer">
+              <h4>Invoice was generated with Invoices generator app </h4>
+              <h5>https://github.com/marek0209/Invoices-generator-app</h5>
           </div>
        </body>
     </html>

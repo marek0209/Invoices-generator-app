@@ -13,4 +13,5 @@ console.log("Sandbox: ", gus.sandbox);
 console.log("login GUS sessionID: ", gus.getSessionId());
 
 var findCompanyByNip = gus.findByNip("9720902729");
-console.log(findCompanyByNip);
+//console.log(findCompanyByNip);
+console.log(findCompanyByNip.response.Nazwa);
