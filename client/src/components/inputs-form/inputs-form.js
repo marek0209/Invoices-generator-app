@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { saveAs } from 'file-saver';
+import './inputs-form.css';
 
-import './App.css';
-
-class App extends Component {
+class InputsForm extends Component {
   state = {
     name: '',
     invoiceID: 0,
@@ -26,7 +25,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="Inputs">
         <input type="text" placeholder="NIP" name="nip" onChange={this.handleChange}/>
         <input type="number" placeholder="InvoiceID" name="invoiceID" onChange={this.handleChange} />
         <input type="text" placeholder="Item name" name="itemName" onChange={this.handleChange}/>
@@ -38,4 +37,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default InputsForm;
