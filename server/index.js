@@ -1,3 +1,5 @@
+const gus = require('node-regon');
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const pdf = require('html-pdf');
@@ -14,6 +16,11 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 app.post('/create-pdf', (req, res) => {
+    gusApiSerach = (req.body.price1) => {
+        var nip = req.body.price1;
+        var findCompanyByNip = gus.findByNip(nip);
+        console.log(findCompanyByNip);
+    }
     pdf.create(pdfTemplate(req.body), {}).toFile('result.pdf', (err) => {
         if(err) {
             res.send(Promise.reject());
