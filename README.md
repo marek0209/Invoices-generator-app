@@ -4,10 +4,10 @@ invoices-generator-app
 
 In the client directory you need to use
 
-### `npm start`
+### `npm install` & `npm start`
 
 In the server directory you need to use
 
-### `npm start`
+### `npm install` & `npm start`
 
 
