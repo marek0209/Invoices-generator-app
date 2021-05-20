@@ -13,7 +13,7 @@
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "express": "^4.16.4",
-    "html-pdf": "^2.2.0",
+    "html-pdf": "^3.0.1",
     "node-regon": "^0.1.51"
   }
 }
