@@ -14,6 +14,6 @@
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "html-pdf": "^2.2.0",
-    "node-regon": "^0.1.51"
+    "node-regon": "^1.0.0"
   }
 }
